@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>MathQuest | Master Mathematics</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="mathquest-logo">
+
+    <svg
+        class="logo-svg"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="MathQuest Logo"
+        role="img"
+    >
+
+        <!-- Outer Quest Ring -->
+        <circle
+            cx="50"
+            cy="50"
+            r="43"
+            fill="none"
+            stroke="url(#blueGradient)"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-dasharray="210 70"
+        />
+
+        <!-- Inner Circle -->
+        <circle
+            cx="50"
+            cy="50"
+            r="35"
+            fill="#171936"
+            stroke="#3D8BFF"
+            stroke-width="1.5"
+            opacity="0.95"
+        />
+
+        <!-- Graduation Cap -->
+        <path
+            d="M25 29 L50 18 L75 29 L50 40 Z"
+            fill="url(#capGradient)"
+        />
+
+        <path
+            d="M35 32 V39
+               C42 44 58 44 65 39
+               V32"
+            fill="#245BD7"
+        />
+
+        <!-- Cap Tassel -->
+        <line
+            x1="68"
+            y1="29"
+            x2="68"
+            y2="42"
+            stroke="#F4B942"
+            stroke-width="2"
+        />
+
+        <circle
+            cx="68"
+            cy="43"
+            r="2.5"
+            fill="#F4B942"
+        />
+
+        <!-- Mathematical Symbols -->
+
+        <text
+            x="17"
+            y="50"
+            font-size="13"
+            font-family="Arial"
+            font-weight="bold"
+            fill="#38BDF8"
+        >
+            +
+        </text>
+
+        <text
+            x="76"
+            y="50"
+            font-size="12"
+            font-family="Arial"
+            font-weight="bold"
+            fill="#F4B942"
+        >
+            ×
+        </text>
+
+        <text
+            x="19"
+            y="68"
+            font-size="11"
+            font-family="Arial"
+            font-weight="bold"
+            fill="#FFFFFF"
+        >
+            −
+        </text>
+
+        <text
+            x="75"
+            y="68"
+            font-size="11"
+            font-family="Arial"
+            font-weight="bold"
+            fill="#38BDF8"
+        >
+            ÷
+        </text>
+
+        <!-- Square Root -->
+        <text
+            x="43"
+            y="29"
+            font-size="8"
+            font-family="Arial"
+            font-weight="bold"
+            fill="#FFFFFF"
+        >
+            √x
+        </text>
+
+        <!-- Main M -->
+        <path
+            d="M32 68
+               V43
+               L50 61
+               L68 43
+               V68"
+            fill="none"
+            stroke="url(#mGradient)"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <!-- Open Book -->
+        <path
+            d="M30 76
+               C37 72 43 73 50 78
+               C57 73 63 72 70 76
+               L70 84
+               C63 80 57 81 50 85
+               C43 81 37 80 30 84 Z"
+            fill="#FFFFFF"
+        />
+
+        <!-- Book Lines -->
+        <path
+            d="M34 78 C40 76 45 78 50 81"
+            fill="none"
+            stroke="#3D8BFF"
+            stroke-width="1.5"
+        />
+
+        <path
+            d="M66 78 C60 76 55 78 50 81"
+            fill="none"
+            stroke="#3D8BFF"
+            stroke-width="1.5"
+        />
+
+        <!-- Star -->
+        <path
+            d="M82 18
+               L84 23
+               L89 25
+               L84 27
+               L82 32
+               L80 27
+               L75 25
+               L80 23 Z"
+            fill="#F4B942"
+        />
+
+
+        <!-- Gradients -->
+
+        <defs>
+
+            <linearGradient
+                id="blueGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+            >
+
+                <stop
+                    offset="0%"
+                    stop-color="#38BDF8"
+                />
+
+                <stop
+                    offset="50%"
+                    stop-color="#2563EB"
+                />
+
+                <stop
+                    offset="100%"
+                    stop-color="#4F46E5"
+                />
+
+            </linearGradient>
+
+
+            <linearGradient
+                id="capGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+            >
+
+                <stop
+                    offset="0%"
+                    stop-color="#38BDF8"
+                />
+
+                <stop
+                    offset="100%"
+                    stop-color="#2563EB"
+                />
+
+            </linearGradient>
+
+
+            <linearGradient
+                id="mGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+            >
+
+                <stop
+                    offset="0%"
+                    stop-color="#FFFFFF"
+                />
+
+                <stop
+                    offset="50%"
+                    stop-color="#BFE8FF"
+                />
+
+                <stop
+                    offset="100%"
+                    stop-color="#3D8BFF"
+                />
+
+            </linearGradient>
+
+        </defs>
+
+    </svg>
+
+
+    <div class="logo-text">
+
+        <span class="logo-name">
+            MATH<span>QUEST</span>
+        </span>
+
+        <small>
+            LEARN • PRACTICE • MASTER
+        </small>
+
+    </div>
+
+</div>
+
+
+        <nav class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#features">Features</a>
+
+            <a href="#how-it-works">
+                How It Works
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                class="btn btn-login"
+                onclick="goToLogin()">
+
+                Log in
+
+            </button>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="goToSignup()">
+
+                Get Started
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+
+        <button
+            class="mobile-menu"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <main id="home">
+
+        <section class="hero">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <span class="badge-dot"></span>
+
+                    AI-Powered Mathematics Learning
+
+                </div>
+
+
+                <h1>
+
+                    Master Mathematics.
+
+                    <span>
+                        One Quest
+                    </span>
+
+                    at a Time.
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    MathQuest makes mathematics
+                    interactive, personalized and
+                    enjoyable through AI-powered
+                    learning, adaptive practice and
+                    gamified quests.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="btn btn-primary btn-large"
+                        onclick="goToSignup()">
+
+                        🚀 Start Learning
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-outline btn-large"
+                        onclick="scrollToSection('how-it-works')">
+
+                        ▶ See How It Works
+
+                    </button>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div class="hero-stat">
+
+                        <strong>
+                            AI
+                        </strong>
+
+                        <span>
+                            Personalized
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-divider"></div>
+
+
+                    <div class="hero-stat">
+
+                        <strong>
+                            🎯
+                        </strong>
+
+                        <span>
+                            Adaptive
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-divider"></div>
+
+
+                    <div class="hero-stat">
+
+                        <strong>
+                            🏆
+                        </strong>
+
+                        <span>
+                            Gamified
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="hero-visual">
+
+
+                <div class="math-orbit orbit-one"></div>
+
+                <div class="math-orbit orbit-two"></div>
+
+
+                <div class="floating-equation equation-one">
+
+                    sin²θ + cos²θ = 1
+
+                </div>
+
+
+                <div class="floating-equation equation-two">
+
+                    2x + 10 = 20
+
+                </div>
+
+
+                <div class="floating-equation equation-three">
+
+                    ∫ x² dx
+
+                </div>
+
+
+                <div class="floating-equation equation-four">
+
+                    π ≈ 3.14159
+
+                </div>
+
+
+                <!-- MAIN CARD -->
+
+                <div class="learning-card">
+
+
+                    <div class="card-top">
+
+                        <div>
+
+                            <span class="small-label">
+                                TODAY'S QUEST
+                            </span>
+
+                            <h3>
+                                Trigonometry
+                            </h3>
+
+                        </div>
+
+
+                        <div class="quest-icon">
+                            🎯
+                        </div>
+
+                    </div>
+
+
+                    <div class="quest-progress">
+
+                        <div class="progress-header">
+
+                            <span>
+                                Quest Progress
+                            </span>
+
+                            <strong>
+                                68%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="learning-items">
+
+
+                        <div class="learning-item completed">
+
+                            <div class="check">
+                                ✓
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Learn the concept
+                                </strong>
+
+                                <small>
+                                    Completed
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="learning-item">
+
+                            <div class="number">
+                                2
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Practice questions
+                                </strong>
+
+                                <small>
+                                    3 questions remaining
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="learning-item">
+
+                            <div class="number">
+                                3
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Mastery challenge
+                                </strong>
+
+                                <small>
+                                    Unlock after practice
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="continue-btn"
+                        onclick="goToSignup()">
+
+                        Continue Quest
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- AI BADGE -->
+
+                <div class="ai-badge">
+
+                    <div class="ai-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            MathQuest AI
+                        </strong>
+
+                        <span>
+                            Your personal math guide
+                        </span>
+
+                    </div>
+
+                    <div class="online-dot"></div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TRUST / INTRO
+        ====================================================== -->
+
+        <section class="intro-section">
+
+            <div class="section-container">
+
+                <div class="section-badge">
+                    WHY MATHQUEST?
+                </div>
+
+                <h2>
+                    Mathematics should be
+                    <span>understood,</span>
+                    not memorized.
+                </h2>
+
+                <p>
+                    MathQuest combines intelligent
+                    technology with engaging learning
+                    experiences to help students build
+                    real mathematical understanding.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FEATURES
+        ====================================================== -->
+
+        <section
+            class="features-section"
+            id="features">
+
+            <div class="section-container">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="section-badge">
+                            POWERFUL FEATURES
+                        </div>
+
+                        <h2>
+                            Everything you need to
+                            <span>master math.</span>
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+                        From learning concepts to
+                        identifying mistakes,
+                        MathQuest supports your
+                        complete learning journey.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+
+                    <!-- FEATURE 1 -->
+
+                    <div class="feature-card featured">
+
+                        <div class="feature-icon purple">
+                            🤖
+                        </div>
+
+                        <h3>
+                            AI Teacher
+                        </h3>
+
+                        <p>
+                            Get step-by-step guidance
+                            from an AI teacher that
+                            helps you understand
+                            instead of simply giving
+                            the answer.
+                        </p>
+
+                        <div class="feature-link">
+                            Learn with AI →
+                        </div>
+
+                    </div>
+
+
+                    <!-- FEATURE 2 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon amber">
+                            🎯
+                        </div>
+
+                        <h3>
+                            Adaptive Practice
+                        </h3>
+
+                        <p>
+                            Questions adjust to your
+                            performance so you practice
+                            exactly what you need.
+                        </p>
+
+                        <div class="feature-link">
+                            Practice smarter →
+                        </div>
+
+                    </div>
+
+
+                    <!-- FEATURE 3 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon green">
+                            📷
+                        </div>
+
+                        <h3>
+                            Solve from a Photo
+                        </h3>
+
+                        <p>
+                            Upload a mathematical
+                            question and let MathQuest
+                            analyze it and guide you
+                            through the solution.
+                        </p>
+
+                        <div class="feature-link">
+                            Try image solving →
+                        </div>
+
+                    </div>
+
+
+                    <!-- FEATURE 4 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon red">
+                            🧠
+                        </div>
+
+                        <h3>
+                            Mistake Analysis
+                        </h3>
+
+                        <p>
+                            Understand why you made
+                            a mistake and get targeted
+                            practice to improve.
+                        </p>
+
+                        <div class="feature-link">
+                            Learn from mistakes →
+                        </div>
+
+                    </div>
+
+
+                    <!-- FEATURE 5 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon blue">
+                            🧬
+                        </div>
+
+                        <h3>
+                            Learning DNA
+                        </h3>
+
+                        <p>
+                            Build a personalized
+                            learning profile based on
+                            accuracy, speed and
+                            mistake patterns.
+                        </p>
+
+                        <div class="feature-link">
+                            Discover your profile →
+                        </div>
+
+                    </div>
+
+
+                    <!-- FEATURE 6 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon gold">
+                            🏆
+                        </div>
+
+                        <h3>
+                            Quests & Achievements
+                        </h3>
+
+                        <p>
+                            Turn learning into a journey
+                            with quests, XP, streaks,
+                            mastery and achievements.
+                        </p>
+
+                        <div class="feature-link">
+                            Start your quest →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+        ====================================================== -->
+
+        <section
+            class="how-section"
+            id="how-it-works">
+
+            <div class="section-container">
+
+
+                <div class="center-heading">
+
+                    <div class="section-badge">
+                        HOW IT WORKS
+                    </div>
+
+                    <h2>
+                        Your journey from
+                        <span>confusion to mastery.</span>
+                    </h2>
+
+                    <p>
+                        MathQuest turns learning mathematics into a guided journey. Learn concepts, practice through interactive challenges, identify your mistakes, and improve step by step—so every problem you solve takes you closer to mastering mathematics.
+
+                    </p>
+
+                </div>
+
+
+                <div class="journey">
+
+
+                    <div class="journey-line"></div>
+
+
+                    <div class="journey-step">
+
+                        <div class="journey-number">
+                            01
+                        </div>
+
+                        <div class="journey-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Learn
+                        </h3>
+
+                        <p>
+                            Understand concepts through
+                            interactive lessons.
+                        </p>
+
+                    </div>
+
+
+                    <div class="journey-step">
+
+                        <div class="journey-number">
+                            02
+                        </div>
+
+                        <div class="journey-icon">
+                            ✏️
+                        </div>
+
+                        <h3>
+                            Practice
+                        </h3>
+
+                        <p>
+                            Solve questions that match
+                            your current level.
+                        </p>
+
+                    </div>
+
+
+                    <div class="journey-step">
+
+                        <div class="journey-number">
+                            03
+                        </div>
+
+                        <div class="journey-icon">
+                            🔍
+                        </div>
+
+                        <h3>
+                            Analyze
+                        </h3>
+
+                        <p>
+                            Identify mistakes and
+                            understand weak topics.
+                        </p>
+
+                    </div>
+
+
+                    <div class="journey-step">
+
+                        <div class="journey-number">
+                            04
+                        </div>
+
+                        <div class="journey-icon">
+                            🧠
+                        </div>
+
+                        <h3>
+                            Adapt
+                        </h3>
+
+                        <p>
+                            Your learning path changes
+                            according to your needs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="journey-step">
+
+                        <div class="journey-number">
+                            05
+                        </div>
+
+                        <div class="journey-icon">
+                            🏆
+                        </div>
+
+                        <h3>
+                            Master
+                        </h3>
+
+                        <p>
+                            Build confidence and achieve
+                            mathematical mastery.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             AI PERSONALIZATION
+        ====================================================== -->
+
+        <section
+            class="ai-section"
+            id="about">
+
+            <div class="section-container ai-container">
+
+
+                <div class="ai-content">
+
+                    <div class="section-badge">
+                        PERSONALIZED LEARNING
+                    </div>
+
+                    <h2>
+                        Your learning journey
+                        should be <span>uniquely yours.</span>
+                    </h2>
+
+                    <p>
+                        MathQuest studies your answers,
+                        accuracy, speed and mistake
+                        patterns to understand where
+                        you need help.
+                    </p>
+
+
+                    <div class="ai-points">
+
+                        <div class="ai-point">
+
+                            <div>✓</div>
+
+                            <span>
+                                Detect weak topics
+                            </span>
+
+                        </div>
+
+
+                        <div class="ai-point">
+
+                            <div>✓</div>
+
+                            <span>
+                                Recommend targeted practice
+                            </span>
+
+                        </div>
+
+
+                        <div class="ai-point">
+
+                            <div>✓</div>
+
+                            <span>
+                                Adjust question difficulty
+                            </span>
+
+                        </div>
+
+
+                        <div class="ai-point">
+
+                            <div>✓</div>
+
+                            <span>
+                                Track your progress
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dna-card">
+
+                    <div class="dna-header">
+
+                        <div>
+
+                            <span>
+                                YOUR LEARNING DNA
+                            </span>
+
+                            <h3>
+                                Mathematics Profile
+                            </h3>
+
+                        </div>
+
+                        <div class="dna-percent">
+                            68%
+                        </div>
+
+                    </div>
+
+
+                    <div class="dna-row">
+
+                        <span>
+                            Algebra
+                        </span>
+
+                        <div class="dna-progress">
+                            <span style="width:92%"></span>
+                        </div>
+
+                        <strong>
+                            92%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dna-row">
+
+                        <span>
+                            Equations
+                        </span>
+
+                        <div class="dna-progress">
+                            <span style="width:88%"></span>
+                        </div>
+
+                        <strong>
+                            88%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dna-row">
+
+                        <span>
+                            Trigonometry
+                        </span>
+
+                        <div class="dna-progress">
+                            <span style="width:42%"></span>
+                        </div>
+
+                        <strong>
+                            42%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dna-row">
+
+                        <span>
+                            Geometry
+                        </span>
+
+                        <div class="dna-progress">
+                            <span style="width:65%"></span>
+                        </div>
+
+                        <strong>
+                            65%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="weak-topic">
+
+                        <span>
+                            ⚠ Weak Topic
+                        </span>
+
+                        <strong>
+                            Trigonometric Identities
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta-section">
+
+            <div class="cta-container">
+
+                <div class="cta-symbol">
+    🧭
+</div>
+
+                <h2>
+                    Ready to start your
+                    <span>MathQuest?</span>
+                </h2>
+
+                <p>
+                    Learn smarter. Practice better.
+                    Master mathematics.
+                </p>
+
+                <button
+                    class="btn btn-amber btn-large"
+                    onclick="goToSignup()">
+
+                    🚀 Start Learning Free
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    
+<!-- =====================================================
+     MATHQUEST FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+
+            <div class="mathquest-logo">
+
+                <!-- Simple MathQuest Logo -->
+                <svg
+                    class="logo-svg"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <circle
+                        cx="50"
+                        cy="50"
+                        r="43"
+                        fill="none"
+                        stroke="#3D8BFF"
+                        stroke-width="6"
+                    />
+
+                    <circle
+                        cx="50"
+                        cy="50"
+                        r="35"
+                        fill="#171936"
+                    />
+
+                    <text
+                        x="50"
+                        y="63"
+                        text-anchor="middle"
+                        font-size="38"
+                        font-family="Arial"
+                        font-weight="bold"
+                        fill="#FFFFFF"
+                    >
+                        M
+                    </text>
+
+                    <text
+                        x="50"
+                        y="27"
+                        text-anchor="middle"
+                        font-size="10"
+                        font-family="Arial"
+                        font-weight="bold"
+                        fill="#F4B942"
+                    >
+                        √x
+                    </text>
+
+                </svg>
+
+
+                <div class="logo-text">
+
+                    <span class="logo-name">
+                        MATH<span>QUEST</span>
+                    </span>
+
+                    <small>
+                        LEARN • PRACTICE • MASTER
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Making mathematics interactive,
+                engaging and easier to understand.
+            </p>
+
+        </div>
+
+
+        <!-- Footer Links -->
+        <div class="footer-links">
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#how-it-works">
+                How It Works
+            </a>
+
+            <a href="#ai">
+                AI Learning
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="signup.html">
+                Get Started
+            </a>
+
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="footer-copy">
+
+            © 2026 MathQuest.
+            <br>
+            Built for smarter learning.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+   
+    
+
+       
+
+        
+             
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="home.js"></script>
+
+</body>
+
+</html>

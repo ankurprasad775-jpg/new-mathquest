@@ -1,0 +1,3715 @@
+/* =========================================================
+   MATHQUEST — TRIGONOMETRY LEARNING
+   TRIGONOMETRY.CSS
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --primary: #4F46E5;
+    --primary-light: #EEF2FF;
+    --primary-mid: #6366F1;
+
+    --accent: #06B6D4;
+    --success: #10B981;
+    --warning: #F59E0B;
+
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+
+    --ink: #111827;
+    --text: #374151;
+    --muted: #6B7280;
+
+    --border: #E5E7EB;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --shadow-sm:
+        0 2px 8px rgba(15, 23, 42, 0.05);
+
+    --shadow-md:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+
+    --shadow-lg:
+        0 18px 45px rgba(15, 23, 42, 0.12);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg);
+
+    color: var(--ink);
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 42px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(14px);
+
+}
+
+
+.topbar-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+/* ============================================================
+   BACK TO CHAPTERS BUTTON
+============================================================ */
+
+.back-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    height: 38px;
+
+    padding: 0 16px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #7c3aed
+    );
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px rgba(99, 102, 241, 0.26);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+/* Arrow */
+
+.back-btn::first-child {
+
+    font-size: 16px;
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+/* Hover */
+
+.back-btn:hover {
+
+    transform: translateX(-3px);
+
+    filter: brightness(1.06);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.10);
+
+}
+.back-btn:hover span:first child {
+
+    transform: translateX(-3px);
+}
+
+
+/* Click */
+
+.back-btn:active {
+
+    transform: translateX(-1px) scale(0.97);
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+
+}
+
+
+/* Keyboard focus */
+
+.back-btn:focus-visible {
+
+    outline: 3px solid rgba(99, 102, 241, 0.25);
+
+    outline-offset: 3px;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .back-btn {
+
+        height: 35px;
+
+        padding: 0 13px;
+
+        margin-bottom: 14px;
+
+        font-size: 11px;
+
+        border-radius: 10px;
+
+    }
+    .back-btn span:first-child {
+
+        font: size 15px;
+    }
+
+}
+/* =========================================================
+   XP BOX
+========================================================= */
+
+.xp-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    border-radius: 12px;
+
+    background: #FFFBEB;
+
+    border: 1px solid #FDE68A;
+
+    color: #92400E;
+
+    font-size: 13px;
+
+}
+
+
+.xp-box span {
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.learning-container {
+
+    width: min(1050px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 38px 0 70px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.learning-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.8fr;
+
+    gap: 30px;
+
+    padding: 38px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #EEF2FF 0%,
+            #FFFFFF 55%,
+            #ECFEFF 100%
+        );
+
+    border: 1px solid #E0E7FF;
+
+    box-shadow: var(--shadow-md);
+
+    margin-bottom: 42px;
+
+}
+
+
+.learning-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: rgba(99, 102, 241, 0.08);
+
+    right: -80px;
+
+    top: -100px;
+
+}
+
+
+.learning-hero::after {
+
+    content: "sin θ   cos θ   tan θ";
+
+    position: absolute;
+
+    right: 28px;
+
+    bottom: 18px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(79, 70, 229, 0.14);
+
+    transform: rotate(-8deg);
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+    color: var(--primary);
+
+}
+
+
+.hero-content h2 {
+
+    max-width: 570px;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 12px;
+
+}
+
+
+.hero-content p {
+
+    max-width: 520px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   PROGRESS CARD
+========================================================= */
+
+.hero-progress {
+
+    align-self: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.progress-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+}
+
+
+.progress-top strong {
+
+    color: var(--primary);
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 9px;
+
+    background: #E5E7EB;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-fill {
+
+    width: 30%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--accent)
+        );
+
+    transition: width 0.5s ease;
+
+}
+
+
+.hero-progress p {
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 18px;
+
+}
+
+
+.section-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 23px;
+
+    letter-spacing: -0.025em;
+
+}
+
+
+.topic-count {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+}
+
+
+/* =========================================================
+   TOPIC CARD
+========================================================= */
+
+.topic-card {
+
+    display: grid;
+
+    grid-template-columns: 48px 52px 1fr auto;
+
+    align-items: center;
+
+    gap: 16px;
+
+    min-height: 110px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 12px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.topic-card:not(.locked):hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(79, 70, 229, 0.25);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* =========================================================
+   TOPIC NUMBER
+========================================================= */
+
+.topic-number {
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    color: #9CA3AF;
+
+}
+
+
+.active-topic .topic-number {
+
+    color: var(--primary);
+
+}
+
+
+.completed .topic-number {
+
+    color: var(--success);
+
+}
+
+
+/* =========================================================
+   TOPIC ICON
+========================================================= */
+
+.topic-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--primary-light);
+
+    font-size: 22px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.topic-card:not(.locked):hover .topic-icon {
+
+    transform: scale(1.08) rotate(3deg);
+
+    box-shadow:
+        0 8px 18px rgba(79, 70, 229, 0.15);
+
+}
+
+
+/* =========================================================
+   TOPIC INFO
+========================================================= */
+
+.topic-info {
+
+    min-width: 0;
+
+}
+
+
+.topic-level {
+
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    color: var(--primary);
+
+}
+
+
+.topic-info h3 {
+
+    font-size: 16px;
+
+    font-weight: 750;
+
+    margin-bottom: 5px;
+
+    letter-spacing: -0.015em;
+
+}
+
+
+.topic-info p {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   TOPIC ACTION
+========================================================= */
+
+.topic-action {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.status {
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    color: var(--primary);
+
+}
+
+
+.completed-status {
+
+    color: var(--success);
+
+}
+
+
+.locked-status {
+
+    color: #9CA3AF;
+
+}
+
+
+/* =========================================================
+   TOPIC BUTTON
+========================================================= */
+
+.topic-btn {
+
+    border: 0;
+
+    padding: 9px 17px;
+
+    border-radius: 10px;
+
+    background: #F3F4F6;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.topic-btn:hover {
+
+    transform: translateY(-1px);
+
+    background: #E5E7EB;
+
+}
+
+
+.topic-btn.primary {
+
+    color: #FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-mid)
+        );
+
+    box-shadow:
+        0 5px 15px rgba(79, 70, 229, 0.22);
+
+}
+
+
+.topic-btn.primary:hover {
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.3);
+
+    transform: translateY(-2px);
+
+}
+
+
+.topic-btn:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+
+}
+
+
+/* =========================================================
+   COMPLETED TOPIC
+========================================================= */
+
+.topic-card.completed {
+
+    border-color: rgba(16, 185, 129, 0.16);
+
+}
+
+
+.topic-card.completed .topic-icon {
+
+    background: #ECFDF5;
+
+}
+
+
+/* =========================================================
+   ACTIVE TOPIC
+========================================================= */
+
+.topic-card.active-topic {
+
+    border-color: rgba(79, 70, 229, 0.2);
+
+    box-shadow:
+        0 8px 25px rgba(79, 70, 229, 0.08);
+
+}
+
+
+.topic-card.active-topic::before {
+
+    content: "";
+
+    width: 3px;
+
+    height: 48px;
+
+    position: absolute;
+
+    left: 0;
+
+    border-radius: 0 4px 4px 0;
+
+    background: var(--primary);
+
+}
+
+
+.active-topic {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   LOCKED TOPIC
+========================================================= */
+
+.topic-card.locked {
+
+    opacity: 0.58;
+
+    background: #F9FAFB;
+
+}
+
+
+.topic-card.locked .topic-icon {
+
+    background: #F3F4F6;
+
+    filter: grayscale(1);
+
+}
+
+
+.topic-card.locked:hover {
+
+    transform: none;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+/* =========================================================
+   LESSON PANEL (inline, interactive)
+========================================================= */
+
+.lesson-panel {
+
+    margin: -4px 0 16px;
+
+    padding: 20px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+
+    animation: lessonFadeIn 0.25s ease;
+
+}
+
+
+@keyframes lessonFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-6px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.lesson-text {
+
+    font-size: 13px;
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    margin-bottom: 16px;
+
+}
+
+
+.quiz-box {
+
+    background: var(--primary-light);
+
+    border-radius: var(--radius-md);
+
+    padding: 14px 16px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.quiz-question {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+
+.quiz-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.quiz-option-btn {
+
+    text-align: left;
+
+    padding: 9px 12px;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.quiz-option-btn:hover:not(:disabled) {
+
+    border-color: var(--primary);
+
+}
+
+
+.quiz-option-btn:disabled {
+
+    cursor: not-allowed;
+
+}
+
+
+.quiz-option-btn.correct {
+
+    background: #ECFDF5;
+
+    border-color: var(--success);
+
+    color: #065F46;
+
+}
+
+
+.quiz-option-btn.wrong {
+
+    background: #FEF2F2;
+
+    border-color: #EF4444;
+
+    color: #991B1B;
+
+}
+
+
+.quiz-feedback {
+
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    min-height: 16px;
+
+}
+
+
+.quiz-feedback.right {
+
+    color: var(--success);
+
+}
+
+
+.quiz-feedback.wrong-text {
+
+    color: #EF4444;
+
+}
+
+
+.lesson-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   COMING SOON
+========================================================= */
+
+.coming-soon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 18px;
+
+    padding: 22px;
+
+    border: 1px dashed #CBD5E1;
+
+    border-radius: var(--radius-lg);
+
+    background: rgba(255, 255, 255, 0.55);
+
+    text-align: left;
+
+}
+
+
+.coming-soon > span {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #F1F5F9;
+
+    color: var(--muted);
+
+    font-size: 22px;
+
+}
+
+
+.coming-soon strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.coming-soon p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   MOTIVATION CARD
+========================================================= */
+
+.motivation-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 30px;
+
+    padding: 22px 24px;
+
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1E1B4B
+        );
+
+    color: #FFFFFF;
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+.motivation-icon {
+
+    width: 46px;
+
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    font-size: 21px;
+
+}
+
+
+.motivation-card h3 {
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.motivation-card p {
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #CBD5E1;
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.mathquest-toast {
+
+    position: fixed;
+
+    bottom: 28px;
+
+    left: 50%;
+
+    transform: translate(-50%, 20px);
+
+    padding: 12px 20px;
+
+    background: #111827;
+
+    color: #FFFFFF;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow-lg);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 999;
+
+}
+
+
+.mathquest-toast.show {
+
+    opacity: 1;
+
+    transform: translate(-50%, 0);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .topbar {
+
+        padding: 0 24px;
+
+    }
+
+
+    .learning-container {
+
+        width: min(100% - 32px, 700px);
+
+    }
+
+
+    .learning-hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+
+    }
+
+
+    .hero-content h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .topic-card {
+
+        grid-template-columns:
+            40px 48px 1fr;
+
+    }
+
+
+    .topic-action {
+
+        grid-column: 3;
+
+        justify-content: flex-start;
+
+        margin-top: 5px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .topbar {
+
+        height: 68px;
+
+        padding: 0 16px;
+
+    }
+
+
+    .topbar h1 {
+
+        font-size: 17px;
+
+    }
+
+
+    .topbar p {
+
+        font-size: 10px;
+
+    }
+
+
+    .back-btn {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .xp-box {
+
+        padding: 7px 10px;
+
+        font-size: 11px;
+
+    }
+
+
+    .learning-container {
+
+        width: calc(100% - 24px);
+
+        padding-top: 24px;
+
+    }
+
+
+    .learning-hero {
+
+        padding: 24px;
+
+        border-radius: 20px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .hero-content h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 13px;
+
+    }
+
+
+    .section-heading {
+
+        align-items: center;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 20px;
+
+    }
+
+
+    .topic-count {
+
+        display: none;
+
+    }
+
+
+    .topic-card {
+
+        grid-template-columns: 38px 44px 1fr;
+
+        gap: 11px;
+
+        padding: 16px;
+
+        min-height: auto;
+
+    }
+
+
+    .topic-number {
+
+        font-size: 11px;
+
+    }
+
+
+    .topic-icon {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 19px;
+
+    }
+
+
+    .topic-info h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .topic-info p {
+
+        font-size: 11px;
+
+    }
+
+
+    .topic-action {
+
+        grid-column: 1 / -1;
+
+        margin-left: 49px;
+
+        padding-top: 4px;
+
+    }
+
+
+    .topic-btn {
+
+        padding: 8px 15px;
+
+    }
+
+
+    .motivation-card {
+
+        padding: 18px;
+
+    }
+
+
+    .lesson-actions {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-content h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .learning-hero {
+
+        padding: 20px;
+
+    }
+
+
+    .topic-card {
+
+        grid-template-columns: 32px 40px 1fr;
+
+    }
+
+
+    .topic-action {
+
+        margin-left: 43px;
+
+    }
+
+}
+/* ============================================================
+   TRIGONOMETRY CONTENT PANEL
+============================================================ */
+
+.topic-content {
+
+    margin-top: 22px;
+
+    line-height: 1.8;
+
+    color: var(--ink);
+
+}
+
+
+.topic-content h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.topic-content h3 {
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.topic-content p {
+
+    margin-bottom: 15px;
+
+}
+
+
+.topic-content ul {
+
+    padding-left: 22px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.topic-content li {
+
+    margin-bottom: 8px;
+
+}
+
+
+/* Formula */
+
+.formula-box {
+
+    margin: 18px 0;
+
+    padding: 18px 20px;
+
+    border-radius: 12px;
+
+    background: rgba(99, 102, 241, 0.08);
+
+    border: 1px solid rgba(99, 102, 241, 0.18);
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.9;
+
+}
+
+
+/* Example */
+
+.example-box {
+
+    margin: 18px 0;
+
+    padding: 18px 20px;
+
+    border-left: 4px solid #6366f1;
+
+    border-radius: 8px;
+
+    background: var(--surface);
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.06);
+
+    line-height: 1.9;
+
+}
+
+
+/* Content Header */
+
+.content-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.content-number {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-weight: 800;
+
+}
+
+
+.content-header h2 {
+
+    margin: 0 0 4px;
+
+}
+
+
+.content-header p {
+
+    margin: 0;
+
+    opacity: 0.7;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .topic-content {
+
+        font-size: 14px;
+
+    }
+
+    .formula-box {
+
+        font-size: 15px;
+
+        padding: 14px;
+
+    }
+
+    .example-box {
+
+        padding: 14px;
+
+    }
+
+}
+/* ============================================================
+   ANGLE LEARNING DIAGRAMS
+============================================================ */
+
+.math-diagram {
+
+    margin: 25px 0;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+
+}
+
+
+/* ---------------- ANGLE DIAGRAM ---------------- */
+
+.angle-diagram {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 210px;
+
+    margin: auto;
+
+}
+
+
+.angle-ray {
+
+    position: absolute;
+
+    height: 4px;
+
+    background: #6366f1;
+
+    border-radius: 10px;
+
+    transform-origin: left center;
+
+}
+
+
+.ray-horizontal {
+
+    width: 170px;
+
+    left: 55px;
+
+    top: 135px;
+
+}
+
+
+.ray-slant {
+
+    width: 145px;
+
+    left: 55px;
+
+    top: 135px;
+
+    transform: rotate(-38deg);
+
+}
+
+
+.angle-arc {
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 65px;
+
+    left: 55px;
+
+    top: 70px;
+
+    border: 3px solid #7c3aed;
+
+    border-left-color: transparent;
+
+    border-bottom-color: transparent;
+
+    border-radius: 50%;
+
+    transform: rotate(8deg);
+
+}
+
+
+.vertex-label {
+
+    position: absolute;
+
+    left: 45px;
+
+    top: 143px;
+
+    font-weight: 800;
+
+}
+
+
+.point-label {
+
+    position: absolute;
+
+    font-weight: 800;
+
+}
+
+
+.point-a {
+
+    right: 30px;
+
+    top: 125px;
+
+}
+
+
+.point-b {
+
+    right: 65px;
+
+    top: 35px;
+
+}
+
+
+.angle-label {
+
+    position: absolute;
+
+    left: 105px;
+
+    top: 90px;
+
+    font-weight: 800;
+
+    font-size: 18px;
+
+}
+
+
+.diagram-labels {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.diagram-labels span {
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(99, 102, 241, 0.08);
+
+    font-size: 12px;
+
+}
+
+
+/* ---------------- DEGREE CIRCLE ---------------- */
+
+.angle-circle {
+
+    position: relative;
+
+    width: 180px;
+
+    height: 180px;
+
+    margin: auto;
+
+    border: 3px solid #6366f1;
+
+    border-radius: 50%;
+
+}
+
+
+.degree-line {
+
+    position: absolute;
+
+    background: #6366f1;
+
+}
+
+
+.line-0 {
+
+    width: 90px;
+
+    height: 3px;
+
+    left: 88px;
+
+    top: 88px;
+
+}
+
+
+.line-180 {
+
+    width: 90px;
+
+    height: 3px;
+
+    left: 0;
+
+    top: 88px;
+
+}
+
+
+.line-90 {
+
+    width: 3px;
+
+    height: 90px;
+
+    left: 88px;
+
+    top: 0;
+
+}
+
+
+.line-270 {
+
+    width: 3px;
+
+    height: 90px;
+
+    left: 88px;
+
+    top: 88px;
+
+}
+
+
+.degree-label {
+
+    position: absolute;
+
+    font-weight: 700;
+
+    font-size: 12px;
+
+}
+
+
+.d0 {
+
+    right: -28px;
+
+    top: 80px;
+
+}
+
+
+.d90 {
+
+    left: 73px;
+
+    top: -25px;
+
+}
+
+
+.d180 {
+
+    left: -35px;
+
+    top: 80px;
+
+}
+
+
+.d270 {
+
+    left: 67px;
+
+    bottom: -25px;
+
+}
+
+
+.degree-center {
+
+    position: absolute;
+
+    left: 83px;
+
+    top: 80px;
+
+    font-weight: 800;
+
+}
+
+
+/* ---------------- CONVERSION ---------------- */
+
+.conversion-diagram {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin: 25px 0;
+
+}
+
+
+.conversion-item {
+
+    padding: 18px 25px;
+
+    border-radius: 14px;
+
+    background: rgba(99, 102, 241, 0.08);
+
+    border: 1px solid rgba(99, 102, 241, 0.18);
+
+}
+
+
+.conversion-item strong {
+
+    display: block;
+
+    font-size: 20px;
+
+}
+
+
+.conversion-item span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    opacity: 0.7;
+
+}
+
+
+.conversion-arrow {
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .math-diagram {
+
+        padding: 18px 10px;
+
+    }
+
+
+    .conversion-diagram {
+
+        gap: 8px;
+
+    }
+
+
+    .conversion-item {
+
+        padding: 14px;
+
+    }
+
+
+    .conversion-item strong {
+
+        font-size: 16px;
+
+    }
+
+}
+/* ============================================================
+   MATHQUEST STEP-BY-STEP LEARNING PAGE
+============================================================ */
+
+.learning-page {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 25px 20px 50px;
+
+}
+
+
+.learning-topbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.step-counter {
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    opacity: 0.7;
+
+}
+
+
+.learning-card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.06);
+
+}
+
+
+.learning-progress {
+
+    height: 6px;
+
+    background: rgba(99,102,241,0.1);
+
+}
+
+
+.learning-progress-fill {
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    transition: width 0.3s ease;
+
+}
+
+
+.learning-body {
+
+    padding: 35px;
+
+}
+
+
+.learn-visual h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+}
+
+
+.learn-visual p {
+
+    line-height: 1.8;
+
+}
+
+
+.info-box {
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(99,102,241,0.08);
+
+    border:
+        1px solid rgba(99,102,241,0.15);
+
+    line-height: 1.7;
+
+}
+
+
+/* ============================================================
+   TRIANGLE DIAGRAM
+============================================================ */
+
+.triangle-diagram {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 240px;
+
+    margin: 35px auto;
+
+}
+
+
+.tri-base {
+
+    position: absolute;
+
+    width: 210px;
+
+    height: 4px;
+
+    left: 35px;
+
+    bottom: 30px;
+
+    background: #6366f1;
+
+}
+
+
+.tri-height {
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 170px;
+
+    left: 35px;
+
+    bottom: 30px;
+
+    background: #7c3aed;
+
+}
+
+
+.tri-hypotenuse {
+
+    position: absolute;
+
+    width: 270px;
+
+    height: 4px;
+
+    left: 35px;
+
+    bottom: 30px;
+
+    background: #8b5cf6;
+
+    transform:
+        rotate(-38deg);
+
+    transform-origin: left;
+
+}
+
+
+.tri-theta {
+
+    position: absolute;
+
+    left: 60px;
+
+    bottom: 45px;
+
+    font-weight: 800;
+
+    color: #7c3aed;
+
+}
+
+
+.tri-opposite {
+
+    position: absolute;
+
+    left: -5px;
+
+    top: 75px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transform: rotate(-90deg);
+
+}
+
+
+.tri-adjacent {
+
+    position: absolute;
+
+    left: 110px;
+
+    bottom: 5px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.tri-hypotenuse-label {
+
+    position: absolute;
+
+    right: -5px;
+
+    top: 70px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transform: rotate(-38deg);
+
+}
+
+
+/* ============================================================
+   ANGLE DIAGRAM
+============================================================ */
+
+.angle-diagram {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 220px;
+
+    margin: 30px auto;
+
+}
+
+
+.angle-line {
+
+    position: absolute;
+
+    height: 4px;
+
+    background: #6366f1;
+
+    border-radius: 10px;
+
+    transform-origin: left;
+
+}
+
+
+.angle-line.horizontal {
+
+    width: 210px;
+
+    left: 40px;
+
+    top: 150px;
+
+}
+
+
+.angle-line.diagonal {
+
+    width: 170px;
+
+    left: 40px;
+
+    top: 150px;
+
+    transform:
+        rotate(-40deg);
+
+}
+
+
+.angle-curve {
+
+    position: absolute;
+
+    width: 70px;
+
+    height: 70px;
+
+    left: 40px;
+
+    top: 80px;
+
+    border:
+        3px solid #7c3aed;
+
+    border-left-color: transparent;
+
+    border-bottom-color: transparent;
+
+    border-radius: 50%;
+
+}
+
+
+.angle-theta {
+
+    position: absolute;
+
+    left: 90px;
+
+    top: 115px;
+
+    font-weight: 800;
+
+    color: #7c3aed;
+
+}
+
+
+.angle-o {
+
+    position: absolute;
+
+    left: 25px;
+
+    top: 158px;
+
+    font-weight: 800;
+
+}
+
+
+.angle-a {
+
+    position: absolute;
+
+    right: 30px;
+
+    top: 140px;
+
+    font-weight: 800;
+
+}
+
+
+.angle-b {
+
+    position: absolute;
+
+    right: 65px;
+
+    top: 35px;
+
+    font-weight: 800;
+
+}
+
+
+/* ============================================================
+   LABEL GRID
+============================================================ */
+
+.label-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.label-grid div {
+
+    padding: 14px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(99,102,241,0.07);
+
+}
+
+
+.label-grid strong,
+.label-grid small {
+
+    display: block;
+
+}
+
+
+.label-grid small {
+
+    margin-top: 5px;
+
+    opacity: 0.65;
+
+    font-size: 10px;
+
+}
+
+
+/* ============================================================
+   SIDE CARDS
+============================================================ */
+
+.side-visual {
+
+    padding: 20px;
+
+}
+
+
+.side-triangle {
+
+    position: relative;
+
+    width: 260px;
+
+    height: 210px;
+
+    margin: auto;
+
+}
+
+
+.sv-base {
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 4px;
+
+    left: 30px;
+
+    bottom: 20px;
+
+    background: #6366f1;
+
+}
+
+
+.sv-height {
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 150px;
+
+    left: 30px;
+
+    bottom: 20px;
+
+    background: #7c3aed;
+
+}
+
+
+.sv-hypotenuse {
+
+    position: absolute;
+
+    width: 243px;
+
+    height: 4px;
+
+    left: 30px;
+
+    bottom: 20px;
+
+    background: #8b5cf6;
+
+    transform: rotate(-38deg);
+
+    transform-origin: left;
+
+}
+
+
+.sv-theta {
+
+    position: absolute;
+
+    left: 50px;
+
+    bottom: 35px;
+
+    color: #7c3aed;
+
+    font-weight: 800;
+
+}
+
+
+.side-learning-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.side-learning-card {
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.side-card-icon {
+
+    font-size: 28px;
+
+    color: #6366f1;
+
+}
+
+
+.side-learning-card h3 {
+
+    font-size: 15px;
+
+}
+
+
+.side-learning-card p {
+
+    font-size: 12px;
+
+    opacity: 0.7;
+
+}
+
+
+/* ============================================================
+   RIGHT TRIANGLE
+============================================================ */
+
+.right-triangle-visual {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 220px;
+
+    margin: 30px auto;
+
+}
+
+
+.rtv-base {
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 4px;
+
+    left: 35px;
+
+    bottom: 25px;
+
+    background: #6366f1;
+
+}
+
+
+.rtv-height {
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 155px;
+
+    left: 35px;
+
+    bottom: 25px;
+
+    background: #7c3aed;
+
+}
+
+
+.rtv-hypotenuse {
+
+    position: absolute;
+
+    width: 245px;
+
+    height: 4px;
+
+    left: 35px;
+
+    bottom: 25px;
+
+    background: #8b5cf6;
+
+    transform: rotate(-38deg);
+
+    transform-origin: left;
+
+}
+
+
+.rtv-90 {
+
+    position: absolute;
+
+    left: 45px;
+
+    bottom: 35px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.rtv-theta {
+
+    position: absolute;
+
+    right: 40px;
+
+    bottom: 35px;
+
+    color: #7c3aed;
+
+    font-weight: 800;
+
+}
+
+
+.remember-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.remember-grid div {
+
+    padding: 18px;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(99,102,241,0.07);
+
+}
+
+
+.remember-grid strong,
+.remember-grid span {
+
+    display: block;
+
+}
+
+
+.remember-grid span {
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    opacity: 0.65;
+
+}
+
+
+/* ============================================================
+   BUILDING VISUAL
+============================================================ */
+
+.height-visual {
+
+    position: relative;
+
+    height: 270px;
+
+    margin: 25px 0;
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+}
+
+
+.building {
+
+    position: absolute;
+
+    right: 20%;
+
+    bottom: 35px;
+
+    font-size: 120px;
+
+}
+
+
+.person {
+
+    position: absolute;
+
+    left: 15%;
+
+    bottom: 35px;
+
+    font-size: 32px;
+
+}
+
+
+.ground {
+
+    position: absolute;
+
+    left: 8%;
+
+    right: 8%;
+
+    bottom: 35px;
+
+    height: 3px;
+
+    background: var(--border);
+
+}
+
+
+.sight-line {
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 3px;
+
+    left: 23%;
+
+    bottom: 95px;
+
+    background: #7c3aed;
+
+    transform: rotate(-15deg);
+
+    transform-origin: left;
+
+}
+
+
+.height-question {
+
+    position: absolute;
+
+    right: 15%;
+
+    top: 60px;
+
+    font-weight: 800;
+
+}
+
+
+.height-angle {
+
+    position: absolute;
+
+    left: 30%;
+
+    bottom: 82px;
+
+    color: #7c3aed;
+
+    font-weight: 800;
+
+}
+
+
+.application-mini-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.application-mini-grid div {
+
+    padding: 14px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(99,102,241,0.07);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+/* ============================================================
+   3-4-5 TRIANGLE
+============================================================ */
+
+.three-four-five {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 230px;
+
+    margin: 30px auto;
+
+}
+
+
+.fff-base {
+
+    position: absolute;
+
+    width: 200px;
+
+    height: 4px;
+
+    left: 35px;
+
+    bottom: 25px;
+
+    background: #6366f1;
+
+}
+
+
+.fff-height {
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 160px;
+
+    left: 35px;
+
+    bottom: 25px;
+
+    background: #7c3aed;
+
+}
+
+
+.fff-hypotenuse {
+
+    position: absolute;
+
+    width: 256px;
+
+    height: 4px;
+
+    left: 35px;
+
+    bottom: 25px;
+
+    background: #8b5cf6;
+
+    transform: rotate(-38deg);
+
+    transform-origin: left;
+
+}
+
+
+.fff-three {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 80px;
+
+    font-weight: 800;
+
+}
+
+
+.fff-four {
+
+    position: absolute;
+
+    left: 130px;
+
+    bottom: 0;
+
+    font-weight: 800;
+
+}
+
+
+.fff-five {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 65px;
+
+    font-weight: 800;
+
+}
+
+
+.calculation-box {
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(99,102,241,0.08);
+
+    border:
+        1px solid rgba(99,102,241,0.15);
+
+    text-align: center;
+
+    line-height: 1.9;
+
+}
+
+
+/* ============================================================
+   LEARNING NAVIGATION
+============================================================ */
+
+.learning-navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px 35px;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.learn-nav-btn {
+
+    padding: 11px 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    background: var(--surface);
+
+    color: var(--ink);
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.learn-nav-btn.primary {
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    color: white;
+
+}
+
+
+.learn-nav-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.learn-nav-btn:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ============================================================
+   QUIZ
+============================================================ */
+
+.quiz-card {
+
+    padding: 35px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+}
+
+
+.quiz-progress {
+
+    height: 6px;
+
+    background:
+        rgba(99,102,241,0.1);
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.quiz-progress-fill {
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    border-radius: 10px;
+
+}
+
+
+.quiz-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+}
+
+
+.quiz-question {
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+
+}
+
+
+.quiz-options {
+
+    display: grid;
+
+    gap: 12px;
+
+}
+
+
+.quiz-option {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 15px;
+
+    text-align: left;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--surface);
+
+    color: var(--ink);
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.quiz-option span {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+        rgba(99,102,241,0.08);
+
+    font-weight: 800;
+
+}
+
+
+.quiz-option:hover {
+
+    border-color: #6366f1;
+
+    transform: translateX(3px);
+
+}
+
+
+.quiz-option.selected {
+
+    border-color: #6366f1;
+
+    background:
+        rgba(99,102,241,0.1);
+
+}
+
+
+.quiz-next-btn {
+
+    margin-top: 25px;
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+}
+
+
+.quiz-next-btn:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ============================================================
+   RESULT
+============================================================ */
+
+.result-card {
+
+    max-width: 600px;
+
+    margin: 40px auto;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.result-icon {
+
+    font-size: 55px;
+
+}
+
+
+.result-message {
+
+    opacity: 0.7;
+
+}
+
+
+.score-circle {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin: 25px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99,102,241,0.1);
+
+    border:
+        6px solid #6366f1;
+
+}
+
+
+.score-circle strong {
+
+    font-size: 25px;
+
+}
+
+
+.score-circle span {
+
+    font-size: 11px;
+
+    opacity: 0.6;
+
+}
+
+
+.xp-earned {
+
+    margin-bottom: 20px;
+
+    font-weight: 800;
+
+}
+
+
+.result-btn {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    background: var(--surface);
+
+    color: var(--ink);
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.result-btn.primary {
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    color: white;
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 650px) {
+
+    .learning-body,
+    .quiz-card {
+
+        padding: 22px;
+
+    }
+
+
+    .learning-navigation {
+
+        padding: 15px 20px;
+
+    }
+
+
+    .label-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .side-learning-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .application-mini-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .triangle-diagram,
+    .angle-diagram,
+    .right-triangle-visual,
+    .three-four-five {
+
+        transform: scale(0.85);
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .height-visual {
+
+        height: 220px;
+
+    }
+
+
+    .building {
+
+        font-size: 80px;
+
+    }
+
+
+    .sight-line {
+
+        width: 220px;
+
+    }
+
+
+    .learning-topbar {
+
+        align-items: flex-start;
+
+    }
+
+}

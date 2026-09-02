@@ -1,0 +1,191 @@
+/* =========================================================
+   ACHIEVEMENTS — Badges & Rewards
+   ========================================================= */
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* Count Banner */
+.ach-count-banner {
+    background: linear-gradient(135deg, #F59E0B, #EF4444);
+    border-radius: 18px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: #fff;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease;
+}
+
+.ach-count-banner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    pointer-events: none;
+}
+
+.ach-count-ring {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.ach-count-ring svg { width: 100%; height: 100%; }
+
+.ach-count-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ach-count-num { font-family: "Space Grotesk", sans-serif; font-size: 32px; font-weight: 700; }
+.ach-count-label { font-family: "Space Grotesk", sans-serif; font-size: 16px; font-weight: 500; opacity: 0.7; }
+
+.ach-count-info h2 { font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.ach-count-info p { font-size: 13px; opacity: 0.85; }
+
+.ach-ring-fill { transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Section Labels */
+.ach-section-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    animation: fadeUp 0.5s ease;
+}
+
+/* Badge Grid */
+.ach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.5s ease 0.1s both;
+}
+
+.ach-badge {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ach-badge.earned:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(15,23,42,0.08);
+}
+
+.ach-badge.earned::after {
+    content: "\2713";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #10B981;
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.ach-badge.locked { opacity: 0.5; }
+
+.ach-badge-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin: 0 auto 12px;
+}
+
+.locked-icon {
+    background: var(--bg);
+    filter: grayscale(0.8);
+}
+
+.ach-badge h4 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.ach-badge p {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.ach-xp {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #F59E0B;
+}
+
+.ach-date {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+/* Locked Progress */
+.ach-locked-bar {
+    height: 6px;
+    background: var(--bg);
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.ach-locked-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #CBD5E1, #94A3B8);
+    border-radius: 10px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ach-locked-pct {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ach-grid { grid-template-columns: repeat(2, 1fr); }
+    .ach-count-banner { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 500px) {
+    .ach-grid { grid-template-columns: 1fr; }
+}

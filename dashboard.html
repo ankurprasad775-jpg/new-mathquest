@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathQuest | Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="43" fill="none" stroke="url(#sideLogoGrad)" stroke-width="5" stroke-dasharray="210 70" />
+                    <circle cx="50" cy="50" r="34" fill="#1E2148" />
+                    <path d="M32 68 V43 L50 61 L68 43 V68" fill="none" stroke="url(#sideMGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                    <text x="50" y="27" text-anchor="middle" font-size="9" font-family="Arial" font-weight="bold" fill="#F4B942">√x</text>
+                    <defs>
+                        <linearGradient id="sideLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#38BDF8" />
+                            <stop offset="100%" stop-color="#4F46E5" />
+                        </linearGradient>
+                        <linearGradient id="sideMGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFFFFF" />
+                            <stop offset="100%" stop-color="#3D8BFF" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="logo-text">
+                <span class="logo-name">MATH<span>QUEST</span></span>
+                <span class="logo-tag">LEARN • PRACTICE • MASTER</span>
+            </div>
+
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav">
+
+            <div class="nav-group">
+
+                <span class="nav-group-label">MAIN</span>
+
+                <a href="#" class="nav-item active" data-section="dashboard">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <a href="#" class="nav-item" data-section="subjects">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <span class="nav-label">Start Learning</span>
+                </a>
+
+                <a href="#" class="nav-item" data-section="quests">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <span class="nav-label">My Quests</span>
+                </a>
+
+            </div>
+
+            <div class="nav-group">
+
+                <span class="nav-group-label">LEARN</span>
+
+                <a href="#" class="nav-item" data-section="ai-teacher">
+                    <div class="nav-icon-wrap ai-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M18 14h.01"/><path d="M6 14h.01"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M12 18v2"/></svg>
+                    </div>
+                    <span class="nav-label">AI Teacher</span>
+                    <span class="nav-badge">NEW</span>
+                </a>
+
+                <a href="#" class="nav-item" data-section="practice">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </div>
+                    <span class="nav-label">Practice</span>
+                </a>
+
+                <a href="#" class="nav-item" data-section="progress">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <span class="nav-label">Progress</span>
+                </a>
+
+                <a href="#" class="nav-item" data-section="dna">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5-2.5"/><path d="M14 8l-1-1"/><path d="M7 18l2.5 2.5"/><path d="M3.5 14.5l.5.5"/><path d="M20 9l.5.5"/><path d="M6.5 12.5l1 1"/><path d="M16.5 10.5l1 1"/><path d="M10 16l1.5 1.5"/></svg>
+                    </div>
+                    <span class="nav-label">Learning DNA</span>
+                </a>
+
+            </div>
+
+            <div class="nav-group">
+
+                <span class="nav-group-label">REWARDS</span>
+
+                <a href="#" class="nav-item" data-section="achievements">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <span class="nav-label">Achievements</span>
+                </a>
+
+            </div>
+
+            <div class="nav-spacer"></div>
+
+            <div class="nav-group">
+
+                <a href="#" class="nav-item" data-section="settings">
+                    <div class="nav-icon-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <span class="nav-label">Settings</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+        <!-- User Card -->
+        <div class="sidebar-user">
+
+            <div class="user-avatar">A</div>
+
+            <div class="user-info">
+                <span class="user-name">Aditya</span>
+                <span class="user-role">Explorer</span>
+            </div>
+
+            <button class="user-menu-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- OVERLAY (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="mainContent">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+
+            <div class="topbar-left">
+                <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                <span class="page-subtitle">Welcome back, Aditya</span>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="search-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" placeholder="Search...">
+                    <kbd>⌘K</kbd>
+                </div>
+
+                <button class="topbar-btn notification-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-user">
+                    <div class="topbar-avatar">A</div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- CONTENT -->
+        <div class="content-area" id="contentArea">
+            <!-- Sections loaded dynamically by dashboard.js -->
+        </div>
+
+        <!-- HIDDEN DASHBOARD TEMPLATE (loaded on first visit) -->
+        <template id="section-dashboard-inline">
+            <div class="dash-hero">
+                <div class="dash-hero-left">
+                    <h2 class="dash-welcome">Welcome back, Aditya <span class="wave">&#x1F44B;</span></h2>
+                    <div class="dash-xp-row">
+                        <span class="xp-badge"><span class="xp-icon">&#9889;</span> 1,240 XP</span>
+                        <span class="level-badge">Level 6</span>
+                    </div>
+                </div>
+                <div class="dash-hero-right">
+                    <div class="avatar-ring"><div class="avatar-circle">AD</div></div>
+                </div>
+            </div>
+            <section class="dash-stats">
+                <div class="stat-card streak-card">
+                    <div class="stat-header"><span class="stat-icon">&#x1F525;</span><span class="stat-label">Streak</span></div>
+                    <div class="stat-main"><span class="stat-value">7 days</span></div>
+                    <div class="stat-sub">Best: 21 days</div>
+                </div>
+                <div class="stat-card mastery-card">
+                    <div class="stat-header"><span class="stat-label">Overall Mastery</span></div>
+                    <div class="stat-main"><span class="stat-value mastery-value">68%</span></div>
+                    <div class="mastery-bar"><div class="mastery-fill" style="width: 68%;"></div></div>
+                </div>
+                <div class="stat-card level-card">
+                    <div class="stat-header"><span class="stat-label">Level</span></div>
+                    <div class="stat-main"><span class="stat-value">6 <span class="level-title">&middot; Problem Solver</span></span></div>
+                    <div class="stat-sub">240 XP to Level 7</div>
+                </div>
+                <div class="stat-card goal-card">
+                    <div class="stat-header"><span class="stat-label">Daily Goal</span></div>
+                    <div class="stat-main"><span class="stat-value">3 / 5</span></div>
+                    <div class="goal-bar"><div class="goal-fill" style="width: 60%;"></div></div>
+                </div>
+            </section>
+            <section class="dash-two-col">
+                <div class="dash-col-left">
+                    <div class="dash-card quest-card">
+                        <div class="card-header"><span class="card-icon">&#x1F3AF;</span><span class="card-title">Today's Quest</span></div>
+                        <div class="quest-content">
+                            <h3 class="quest-name">Master Trigonometric Identities</h3>
+                            <div class="quest-meta"><span>Level 1 &middot; Fundamentals &middot; Est. 20 min</span></div>
+                            <div class="quest-xp"><span class="xp-label">&#9889; +150 XP</span></div>
+                            <button class="btn btn-primary quest-btn">Continue Quest</button>
+                        </div>
+                    </div>
+                    <div class="dash-card weak-card">
+                        <div class="card-header"><span class="card-icon">&#x26A0;&#xFE0F;</span><span class="card-title">Weak Topic</span></div>
+                        <div class="weak-content">
+                            <h4 class="weak-name">Trigonometric Identities</h4>
+                            <div class="weak-mastery"><span class="weak-percent">42% mastery</span></div>
+                            <button class="btn btn-secondary weak-btn">Practice now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-col-right">
+                    <div class="dash-card activity-card">
+                        <div class="card-header"><span class="card-title">Recent Activity</span></div>
+                        <div class="activity-list">
+                            <div class="activity-item"><span class="activity-icon done">&#x2705;</span><div class="activity-info"><span class="activity-text">Completed &mdash; Linear Equations quiz</span><span class="activity-time">2h ago</span></div></div>
+                            <div class="activity-item"><span class="activity-icon fire">&#x1F525;</span><div class="activity-info"><span class="activity-text">Streak protected &mdash; daily challenge</span><span class="activity-time">1d ago</span></div></div>
+                            <div class="activity-item"><span class="activity-icon trophy">&#x1F3C6;</span><div class="activity-info"><span class="activity-text">Badge earned &mdash; Fast Solver</span><span class="activity-time">2d ago</span></div></div>
+                        </div>
+                    </div>
+                    <div class="dash-card practice-card">
+                        <div class="card-header"><span class="card-title">Recommended Practice</span></div>
+                        <div class="practice-list">
+                            <div class="practice-item"><div class="practice-info"><span class="practice-name">Sign errors in equations</span></div><button class="btn btn-outline btn-sm">Start</button></div>
+                            <div class="practice-item"><div class="practice-info"><span class="practice-name">Quadratic formula recap</span></div><button class="btn btn-outline btn-sm">Start</button></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

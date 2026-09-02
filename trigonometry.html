@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>MathQuest | Trigonometry</title>
+
+    <link
+        rel="stylesheet"
+        href="trigonometry.css">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         TOP NAVBAR
+    ========================================== -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+
+            <div>
+
+                <h1>Trigonometry</h1>
+
+                <p>Master the world of angles</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="xp-box">
+
+            <span>⚡</span>
+
+            <strong id="xpValue">
+                120 XP
+            </strong>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="learning-container">
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section class="learning-hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    MATHEMATICS • TRIGONOMETRY
+                </span>
+
+                <h2>
+                    Build your Trigonometry
+                    foundation.
+                </h2>
+
+                <p>
+                    Learn angles, triangles and
+                    trigonometric ratios step by step.
+                </p>
+
+            </div>
+
+
+            <div class="hero-progress">
+
+                <div class="progress-top">
+
+                    <span>Your Progress</span>
+
+                    <strong id="progressPercent">
+                        30%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+                    </div>
+
+                </div>
+
+
+                <p>
+                    <span id="completedTopics">6</span>
+                    / 20 topics completed
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             TOPIC LIST
+        ====================================== -->
+
+        <section class="topics-section">
+             <button
+                class="back-btn"
+                id="goBackToChaptersBtn"
+                type="button">
+
+
+                <span>←</span>
+                
+                <span>Back to Chapters</span>
+
+            </button>
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR JOURNEY
+                    </span>
+
+                    <h2>
+                        Trigonometry Topics
+                    </h2>
+
+                </div>
+
+                <span class="topic-count">
+                    20 Topics
+                </span>
+
+            </div>
+
+
+
+            <!-- =================================
+                 TOPIC 01
+            ================================== -->
+
+            <article
+                class="topic-card completed"
+                data-topic="1">
+
+                <div class="topic-number">
+                    01
+                </div>
+
+
+                <div class="topic-icon">
+                    📐
+                </div>
+
+
+                <div class="topic-info">
+
+                    <span class="topic-level">
+                        FOUNDATION
+                    </span>
+
+                    <h3>
+                        Introduction to Trigonometry
+                    </h3>
+
+                    <p>
+                        Understand what trigonometry is
+                        and why we use it.
+                    </p>
+
+                </div>
+
+
+                <div class="topic-action">
+
+                    <span class="status completed-status">
+                        ✓ Completed
+                    </span>
+
+                    <button
+                        class="topic-btn"
+                        onclick="openTopic(1)">
+
+                        Review
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 TOPIC 02
+            ================================== -->
+
+            <article
+                class="topic-card active-topic"
+                data-topic="2">
+
+                <div class="topic-number">
+                    02
+                </div>
+
+
+                <div class="topic-icon">
+                    📏
+                </div>
+
+
+                <div class="topic-info">
+
+                    <span class="topic-level">
+                        FOUNDATION
+                    </span>
+
+                    <h3>
+                        Angles & Their Measurement
+                    </h3>
+
+                    <p>
+                        Learn degrees, radians and
+                        angle measurement.
+                    </p>
+
+                </div>
+
+
+                <div class="topic-action">
+
+                    <span class="status">
+                        NEXT
+                    </span>
+
+                    <button
+                        class="topic-btn primary"
+                        onclick="(function(){ var target='angles.html'; var abs=window.location.origin && window.location.origin!=='null' ? window.location.origin+'/sections/topics/angles.html' : target; window.location.href=window.location.protocol==='file:' ? target : abs; })()">
+
+                        Start
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 TOPIC 03
+            ================================== -->
+
+            <article
+                class="topic-card locked"
+                data-topic="3">
+
+                <div class="topic-number">
+                    03
+                </div>
+
+
+                <div class="topic-icon">
+                    🔺
+                </div>
+
+
+                <div class="topic-info">
+
+                    <span class="topic-level">
+                        FOUNDATION
+                    </span>
+
+                    <h3>
+                        Right-Angled Triangle
+                    </h3>
+
+                    <p>
+                        Identify hypotenuse, opposite
+                        and adjacent sides.
+                    </p>
+
+                </div>
+
+
+                <div class="topic-action">
+
+                    <span class="status locked-status">
+                        🔒 Locked
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 TOPIC 04
+            ================================== -->
+
+            <article
+                class="topic-card locked"
+                data-topic="4">
+
+                <div class="topic-number">
+                    04
+                </div>
+
+
+                <div class="topic-icon">
+                    ∿
+                </div>
+
+
+                <div class="topic-info">
+
+                    <span class="topic-level">
+                        CORE
+                    </span>
+
+                    <h3>
+                        Trigonometric Ratios
+                    </h3>
+
+                    <p>
+                        Learn sin, cos and tan using
+                        right-angled triangles.
+                    </p>
+
+                </div>
+
+
+                <div class="topic-action">
+
+                    <span class="status locked-status">
+                        🔒 Locked
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 TOPIC 05
+            ================================== -->
+
+            <article
+                class="topic-card locked"
+                data-topic="5">
+
+                <div class="topic-number">
+                    05
+                </div>
+
+
+                <div class="topic-icon">
+                    🔢
+                </div>
+
+
+                <div class="topic-info">
+
+                    <span class="topic-level">
+                        CORE
+                    </span>
+
+                    <h3>
+                        Cosec, Sec & Cot
+                    </h3>
+
+                    <p>
+                        Explore the reciprocal
+                        trigonometric ratios.
+                    </p>
+
+                </div>
+
+
+                <div class="topic-action">
+
+                    <span class="status locked-status">
+                        🔒 Locked
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 TOPIC 06
+            ================================== -->
+
+            <article
+                class="topic-card locked"
+                data-topic="6">
+
+                <div class="topic-number">
+                    06
+                </div>
+
+
+                <div class="topic-icon">
+                    🔄
+                </div>
+
+
+                <div class="topic-info">
+
+                    <span class="topic-level">
+                        CORE
+                    </span>
+
+                    <h3>
+                        Reciprocal Relations
+                    </h3>
+
+                    <p>
+                        Understand relationships between
+                        the six trigonometric ratios.
+                    </p>
+
+                </div>
+
+
+                <div class="topic-action">
+
+                    <span class="status locked-status">
+                        🔒 Locked
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 COMING SOON
+            ================================== -->
+
+            <div class="coming-soon">
+
+                <span>＋</span>
+
+                <div>
+
+                    <strong>
+                        More topics coming soon
+                    </strong>
+
+                    <p>
+                        Complete your foundation
+                        to unlock advanced topics.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BOTTOM MOTIVATION
+        ====================================== -->
+
+        <section class="motivation-card">
+
+            <div class="motivation-icon">
+                🎯
+            </div>
+
+            <div>
+
+                <h3>
+                    Keep going!
+                </h3>
+
+                <p>
+                    Complete one topic at a time
+                    and build your mathematical
+                    superpower.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="trigonometry.js"></script>
+
+</body>
+
+
+

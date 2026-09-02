@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathQuest | Angles & Their Measurement</title>
+    <link rel="stylesheet" href="trigonometry.css">
+    <style>
+        .quiz-container { width: min(800px, calc(100% - 40px)); margin: 30px auto; }
+        .question-card-new { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow-sm); }
+        .question-card-new h3 { font-size: 15px; margin-bottom: 14px; }
+        .options-vertical { display: flex; flex-direction: column; gap: 8px; }
+        .option-btn-new { text-align: left; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: #F9FAFB; font-size: 13px; cursor: pointer; transition: all 0.2s; }
+        .option-btn-new:hover { border-color: var(--primary); background: #EEF2FF; }
+        .option-btn-new.correct { background: #ECFDF5; border-color: #10B981; color: #065F46; }
+        .option-btn-new.wrong { background: #FEF2F2; border-color: #EF4444; color: #991B1B; }
+        .feedback { margin-top: 8px; font-size: 12px; font-weight: 600; min-height: 16px; }
+        .feedback.right { color: #10B981; }
+        .feedback.wrong-text { color: #EF4444; }
+        .result-summary { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; margin-top: 24px; box-shadow: var(--shadow-md); }
+        .score-circle-large { width: 90px; height: 90px; border-radius: 50%; border: 4px solid var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 16px auto; }
+        .score-circle-large strong { font-size: 20px; }
+        .score-circle-large span { font-size: 11px; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-left">
+            <div>
+                <h1>Angles & Their Measurement</h1>
+                <p>Practice Questions</p>
+            </div>
+        </div>
+        <div class="xp-box">
+            <span>⚡</span>
+            <strong id="xpValue">120 XP</strong>
+        </div>
+    </header>
+
+    <main class="quiz-container">
+        <button class="back-btn" id="backToTrigoBtn" type="button">
+            <span>←</span>
+            <span>Back to Trigonometry</span>
+        </button>
+
+        <div class="learning-hero" style="grid-template-columns: 1fr; padding: 24px; margin-bottom: 24px;">
+            <div class="hero-content">
+                <span class="eyebrow">TRIGONOMETRY • TOPIC 02</span>
+                <h2>Angles & Their Measurement — Quiz</h2>
+                <p>Answer 5 questions to complete this topic. You need 3 correct to pass.</p>
+            </div>
+        </div>
+
+        <div id="quizArea"></div>
+        <div id="resultArea"></div>
+    </main>
+
+    <script>
+        const quizData = [
+            { question: "How many degrees are in a complete rotation?", options: ["90°","180°","270°","360°"], answer: 3 },
+            { question: "A right angle measures:", options: ["45°","90°","180°","360°"], answer: 1 },
+            { question: "180° is equal to:", options: ["π/2","π","2π","π/4"], answer: 1 },
+            { question: "360° is equal to:", options: ["π","π/2","2π","4π"], answer: 2 },
+            { question: "Which is another unit used to measure angles?", options: ["Meter","Kilogram","Radian","Second"], answer: 2 }
+        ];
+
+        let selected = {};
+        let score = 0;
+
+        function renderQuiz() {
+            const area = document.getElementById('quizArea');
+            area.innerHTML = quizData.map((q, qi) => `
+                <div class="question-card-new" data-qi="${qi}">
+                    <h3>Q${qi+1}. ${q.question}</h3>
+                    <div class="options-vertical">
+                        ${q.options.map((opt, oi) => `
+                            <button class="option-btn-new" data-qi="${qi}" data-oi="${oi}" onclick="selectOption(${qi}, ${oi})">
+                                ${String.fromCharCode(65+oi)}. ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="feedback" id="feedback-${qi}"></div>
+                </div>
+            `).join('') + `<button class="topic-btn primary" style="width:100%; padding:14px; font-size:14px; margin-top:10px;" onclick="submitQuiz()">Submit Quiz</button>`;
+        }
+
+        function selectOption(qi, oi) {
+            selected[qi] = oi;
+            const card = document.querySelector(`.question-card-new[data-qi="${qi}"]`);
+            const fb = document.getElementById(`feedback-${qi}`);
+            const correct = quizData[qi].answer;
+            // reset
+            card.querySelectorAll('.option-btn-new').forEach(b => {
+                b.classList.remove('correct','wrong');
+                b.style.background = '#F9FAFB';
+                b.style.borderColor = 'var(--border)';
+                b.disabled = false;
+            });
+            const btn = card.querySelector(`.option-btn-new[data-oi="${oi}"]`);
+            const correctBtn = card.querySelector(`.option-btn-new[data-oi="${correct}"]`);
+            if (oi === correct) {
+                btn.classList.add('correct');
+                fb.textContent = '✓ Correct';
+                fb.className = 'feedback right';
+            } else {
+                btn.classList.add('wrong');
+                correctBtn.classList.add('correct');
+                fb.textContent = '✗ Wrong — Correct: ' + String.fromCharCode(65+correct);
+                fb.className = 'feedback wrong-text';
+            }
+            // disable after choice for this question
+            card.querySelectorAll('.option-btn-new').forEach(b => b.disabled = true);
+            // auto update score preview
+            score = Object.keys(selected).filter(k => selected[k] === quizData[k].answer).length;
+        }
+
+        function submitQuiz() {
+            if (Object.keys(selected).length < quizData.length) {
+                alert('Please answer all questions before submitting.');
+                return;
+            }
+            score = 0;
+            quizData.forEach((q, qi) => {
+                const card = document.querySelector(`.question-card-new[data-qi="${qi}"]`);
+                const fb = document.getElementById(`feedback-${qi}`);
+                const chosen = selected[qi];
+                const correct = q.answer;
+                card.querySelectorAll('.option-btn-new').forEach(b => b.disabled = true);
+                const chosenBtn = card.querySelector(`.option-btn-new[data-oi="${chosen}"]`);
+                const correctBtn = card.querySelector(`.option-btn-new[data-oi="${correct}"]`);
+                if (chosen === correct) {
+                    score++;
+                    chosenBtn.classList.add('correct');
+                    fb.textContent = '✓ Correct';
+                    fb.className = 'feedback right';
+                } else {
+                    chosenBtn.classList.add('wrong');
+                    correctBtn.classList.add('correct');
+                    fb.textContent = '✗ Wrong — Correct: ' + String.fromCharCode(65+correct);
+                    fb.className = 'feedback wrong-text';
+                }
+            });
+            showResult();
+        }
+
+        function showResult() {
+            const passed = score >= 3;
+            const percent = Math.round(score/5*100);
+            document.getElementById('resultArea').innerHTML = `
+                <div class="result-summary">
+                    <div style="font-size:32px;">${passed ? '🎉' : '📚'}</div>
+                    <h2>${passed ? 'Topic Complete!' : 'Keep Practicing!'}</h2>
+                    <p style="color: var(--muted); font-size:13px; margin-top:6px;">${passed ? 'Excellent! You passed this topic.' : 'You need at least 3 correct answers to pass.'}</p>
+                    <div class="score-circle-large">
+                        <strong>${score}/5</strong>
+                        <span>${percent}%</span>
+                    </div>
+                    ${passed ? '<div style="color:#92400E; background:#FFFBEB; display:inline-block; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:700;">⭐ +10 XP</div>' : ''}
+                    <div style="margin-top:18px; display:flex; gap:10px; justify-content:center;">
+                        <button class="topic-btn primary" onclick="tryAgain()">Try Again</button>
+                        <button class="topic-btn" onclick="goBack()">Back to Trigonometry</button>
+                    </div>
+                </div>
+            `;
+            if (passed) {
+                let xp = parseInt(localStorage.getItem('mathquest_trigonometry_xp')||'120');
+                xp += 10;
+                localStorage.setItem('mathquest_trigonometry_xp', xp);
+                const xpEl = document.getElementById('xpValue');
+                if (xpEl) xpEl.textContent = xp + ' XP';
+                // mark topic 2 completed
+                let prog = JSON.parse(localStorage.getItem('mathquest_trigonometry_progress')||'{"completedTopics":[1],"xp":120}');
+                if (!prog.completedTopics.includes(2)) { prog.completedTopics.push(2); prog.xp = xp; localStorage.setItem('mathquest_trigonometry_progress', JSON.stringify(prog)); }
+            }
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        function tryAgain() {
+            selected = {};
+            document.getElementById('resultArea').innerHTML = '';
+            renderQuiz();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goBack() {
+            // stays inside trigonometry flow - keep as is for topic internal navigation
+            var target = 'trigonometry.html';
+            var abs = window.location.origin && window.location.origin !== 'null' ? window.location.origin + '/sections/topics/trigonometry.html' : target;
+            window.location.href = window.location.protocol === 'file:' ? target : abs;
+        }
+        // FIX: ensure body overflow reset on load (prevents freeze after overlay)
+        window.addEventListener('load', function(){ document.body.style.overflow=''; });
+
+        document.getElementById('backToTrigoBtn').addEventListener('click', goBack);
+
+        renderQuiz();
+    </script>
+</body>
+</html>
